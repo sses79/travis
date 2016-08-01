@@ -14,7 +14,7 @@ php:
 #   - if [[ "$DB" == "mysql" ]]; then mysql -e "create database IF NOT EXISTS my_db;" -uroot; fi
 
 # omitting "script:" will default to phpunit
-script: phpunit --configuration phpunit.xml --coverage-text
+script: vendor/bin/phpunit --coverage-text
 
 # configure notifications (email, IRC, campfire etc)
 notifications:
