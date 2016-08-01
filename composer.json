@@ -1,0 +1,18 @@
+{
+    "authors": [
+        {
+            "name": "Tianwei Lu",
+            "email": "sses79@gmail.com"
+        }
+    ],
+    "require": {
+        "phpunit/phpunit": "5.4.*"
+    },
+    "autoload": {
+        "psr-4":  {
+            "Tw\\": "src/",
+            "Tests\\": "tests/"
+        }
+    }
+}
+
