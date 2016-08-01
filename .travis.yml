@@ -3,7 +3,7 @@ language: php
 
 # list any PHP version you want to test against
 php:
-  - 5.4
+  - 5.6
 
 # optionally specify a list of environments
 # env:
@@ -12,6 +12,17 @@ php:
 # execute any number of scripts before the test run, custom env's are available as variables
 # before_script:
 #   - if [[ "$DB" == "mysql" ]]; then mysql -e "create database IF NOT EXISTS my_db;" -uroot; fi
+env:
+  global:
+    - setup=basic
+
+sudo: false
+
+before_install:
+  - travis_retry composer self-update
+
+install:
+- if [[ $setup = 'basic' ]]; then travis_retry composer install --no-interaction --prefer-dist; fi
 
 # omitting "script:" will default to phpunit
 script: vendor/bin/phpunit --coverage-text
